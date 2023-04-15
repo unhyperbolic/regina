@@ -1,6 +1,7 @@
 if (${REGINA_INSTALL_DEV})
   INSTALL(FILES
     boundarycomponent.h
+    buildLink.h
     component.h
     face.h
     faceembedding.h

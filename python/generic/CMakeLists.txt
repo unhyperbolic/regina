@@ -1,5 +1,6 @@
 # Files to compile
 SET ( FILES
+  buildLink.cpp
   cut.cpp
   example5.cpp
   example6.cpp

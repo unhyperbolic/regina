@@ -169,6 +169,8 @@ void addTreewidthClasses(pybind11::module_& m);
 void addTriangulationClasses(pybind11::module_& m);
 void addUtilitiesClasses(pybind11::module_& m);
 
+void addBuildLink(pybind11::module_& m);
+
 void addSageHacks();
 
 namespace {
@@ -325,6 +327,8 @@ Returns:
     addLinkClasses(m);
     addEnumerateClasses(m);
 
+    addBuildLink(m);
+    
     // This routine allows the user to import sage-related hacks, which
     // are not included by default in regina's python module.
     m.def("_addSageHacks", &addSageHacks,
