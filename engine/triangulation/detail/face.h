@@ -455,6 +455,12 @@ class FaceBase :
 
             return LinkBuilder<dim, subdim>::buildInclusion(*this);
         }
+
+        const Triangulation<linkDimension> &
+        buildLink() const { return link(); }
+
+        Isomorphism<dim>
+        buildLinkInclusion() const { return linkInclusion(); }
     
         /**
          * Returns the index of this face within the underlying

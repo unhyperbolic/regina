@@ -41,7 +41,7 @@ Face<4, 0>::~Face() {
     delete link_;
 }
 
-Isomorphism<4> Face<4, 0>::buildLinkInclusion() const {
+Isomorphism<4> Face<4, 0>::oldBuildLinkInclusion() const {
     Isomorphism<4> inclusion(degree());
 
     size_t i = 0;

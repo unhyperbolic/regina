@@ -128,7 +128,7 @@ class Face<4, 1> : public detail::FaceBase<4, 1> {
          *
          * \return the read-only triangulated link of this edge.
          */
-        const Triangulation<2>& buildLink() const;
+        const Triangulation<2>& oldBuildLink() const;
 
         /**
          * Returns details of how the triangles are labelled in the link
@@ -164,7 +164,7 @@ class Face<4, 1> : public detail::FaceBase<4, 1> {
          * \return details of how buildLink() labels the triangles of
          * the edge link.
          */
-        Isomorphism<4> buildLinkInclusion() const;
+        Isomorphism<4> oldBuildLinkInclusion() const;
 
         /**
          * Returns the link of this edge as a normal hypersurface.

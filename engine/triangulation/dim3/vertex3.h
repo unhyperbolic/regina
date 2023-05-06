@@ -190,7 +190,7 @@ class Face<3, 0> : public detail::FaceBase<3, 0> {
          *
          * \return the read-only triangulated link of the vertex.
          */
-        const Triangulation<2>& buildLink() const;
+        const Triangulation<2>& oldBuildLink() const;
 
         /**
          * Returns details of how the triangles are labelled in the link
@@ -224,7 +224,7 @@ class Face<3, 0> : public detail::FaceBase<3, 0> {
          * \return details of how buildLink() labels the triangles of
          * the vertex link.
          */
-        Isomorphism<3> buildLinkInclusion() const;
+        Isomorphism<3> oldBuildLinkInclusion() const;
 
         /**
          * Determines if the link of this vertex is closed.

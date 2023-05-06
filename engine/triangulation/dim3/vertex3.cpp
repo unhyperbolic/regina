@@ -40,7 +40,7 @@ Vertex<3>::~Face() {
     delete linkTri_;
 }
 
-const Triangulation<2>& Face<3, 0>::buildLink() const {
+const Triangulation<2>& Face<3, 0>::oldBuildLink() const {
     if (! linkTri_) {
         // Build the triangulation.
         auto* ans = new Triangulation<2>();
@@ -93,7 +93,7 @@ const Triangulation<2>& Face<3, 0>::buildLink() const {
     return *linkTri_;
 }
 
-Isomorphism<3> Face<3, 0>::buildLinkInclusion() const {
+Isomorphism<3> Face<3, 0>::oldBuildLinkInclusion() const {
     Isomorphism<3> inclusion(degree());
 
     size_t i = 0;

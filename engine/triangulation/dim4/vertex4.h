@@ -133,7 +133,7 @@ class Face<4, 0> : public detail::FaceBase<4, 0> {
          *
          * \return the read-only triangulated link of this vertex.
          */
-        const Triangulation<3>& buildLink() const;
+        const Triangulation<3>& oldBuildLink() const;
 
         /**
          * Returns details of how the tetrahedra are labelled in the link
@@ -167,7 +167,7 @@ class Face<4, 0> : public detail::FaceBase<4, 0> {
          * \return details of how buildLink() labels the tetrahedra of
          * the vertex link.
          */
-        Isomorphism<4> buildLinkInclusion() const;
+        Isomorphism<4> oldBuildLinkInclusion() const;
 
         /**
          * Determines if this vertex is an ideal vertex.
@@ -210,7 +210,7 @@ inline Face<4, 0>::Face(Component<4>* component) :
         detail::FaceBase<4, 0>(component), link_(nullptr), ideal_(false) {
 }
 
-inline const Triangulation<3>& Face<4, 0>::buildLink() const {
+inline const Triangulation<3>& Face<4, 0>::oldBuildLink() const {
     return *link_;
 }
 
