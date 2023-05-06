@@ -89,6 +89,10 @@ struct LinkBuilder
     static
     UniquePtr
     build(const FaceBase<dim, subdim> &face);
+
+    static
+    Isomorphism<dim>
+    buildInclusion(const FaceBase<dim, subdim> &face);
 };
 
 }

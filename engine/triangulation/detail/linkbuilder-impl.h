@@ -163,6 +163,39 @@ LinkBuilder<dim, subdim>::build(const FaceBase<dim, subdim> &face)
     return UniquePtr(ans);
 }
 
+template<int n>
+static
+std::array<int, n> cyclic(const int k)
+{
+    std::array<int, n> a;
+
+    for (int i = 0; i < n; ++i)
+        a[i] = (i + k) % n;
+
+    return a;
+}
+
+template<int dim, int subdim>
+Isomorphism<dim>
+LinkBuilder<dim, subdim>::buildInclusion(const FaceBase<dim, subdim> &face)
+{
+    static Perm<dim+1> cyclicPerm(cyclic<dim+1>(subdim + 1));
+
+    Isomorphism<dim> iso(face.degree());
+
+    size_t embeddingIndex = 0;
+
+    for (const FaceEmbedding<dim, subdim> &embedding : face) {
+
+        iso.simpImage(embeddingIndex) = embedding.simplex()->index();
+        iso.facetPerm(embeddingIndex) = embedding.vertices() * cyclicPerm;
+
+        ++embeddingIndex;
+    }
+
+    return iso;
+}
+
 }
 
 #endif

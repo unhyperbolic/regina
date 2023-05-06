@@ -444,6 +444,17 @@ class FaceBase :
             }
             return *(linkTri_.value);
         }
+
+        Isomorphism<dim>
+        linkInclusion() const
+        {
+            static_assert(
+                canBuildLink,
+                "Link has a triangulation of dimension 0 or 1 which "
+                "is not supported by Regina");
+
+            return LinkBuilder<dim, subdim>::buildInclusion(*this);
+        }
     
         /**
          * Returns the index of this face within the underlying
